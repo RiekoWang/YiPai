@@ -12,7 +12,7 @@ if( document.body.clientWidth < 768 ){
 }
 
 $(function(){
-
+	var HiRrl = '/auth/login.action';
     $('#login').bind('click',function(){
         $(".pops").attr('class', 'pops animated fadeInUp');
         $('#loginPop').show();
@@ -53,7 +53,7 @@ $(function(){
             $("#login_").html("登录中...");
             $.ajax({
                 type: 'POST',
-                url: 'auth/login.action',
+                url: HiRrl,
                 dataType: 'json',
                 data: {'username':username,'password':password},
                 error: function (xhr, state, exception) {
@@ -79,7 +79,7 @@ $(function(){
                             removeCookie('higo.hotel.username');
                             removeCookie('higo.hotel.password');
                         }
-                        var main_action = "auth/main_new.action"; //主页action
+                        var main_action = "/auth/main_new.action"; //主页action
                         /* 								if ($("#newVersion").is(':checked'))
                          {
                          main_action = "auth/main_new.action";
